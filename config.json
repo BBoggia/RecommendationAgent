@@ -1,0 +1,60 @@
+{
+    "environment": {
+      "tokenizers_parallelism": "true",
+      "wandb_tracing": "false",
+      "wandb_project": "LangChain Agent",
+      "wandb_job_type": "inference",
+      "wandb_run_group": "GPT-4",
+      "wandb_name_format": "%m.%d.%Y_%H.%M.%S"
+    },
+    "global_settings": {
+      "verbose": true,
+      "debug": false
+    },
+    "llm_settings": {
+      "model": "gpt-4-turbo-preview",
+      "temperature": 0.5,
+      "verbose": true
+    },
+    "vector_store_settings": {
+      "chunk_size": 2500,
+      "overlap": 400
+    },
+    "agent_settings": {
+      "verbose": true
+    },
+    "chain_settings": {
+      "verbose": true
+    },
+    "tool_settings": {
+      "verbose": true
+    },
+    "prompt_settings": {
+      "user_name": "Branson",
+      "location": "Kent, Ohio",
+      "date_format": "%A, %B %d, %Y %I:%M%p"
+    },
+    "memory_settings": {
+      "memory_key": "chat_history",
+      "return_messages": true,
+      "json_safe": true
+    },
+    "document_paths": {
+      "data_docs_dir": "data_docs_txt/",
+      "database_dir": "chroma_db/",
+      "log_dir": "logs/",
+      "conversation_logs": {
+        "dir": "logs/conversation_logs/",
+        "file_name": "conv-",
+        "date_format": "%m.%d.%Y_%H.%M.%S",
+        "file_ext": ".log"
+      }
+    },
+    "documents": [
+      {
+        "file_name": "home_depot_data.csv",
+        "name": "Home Depot Product Knowledge Base",
+        "description": "A CSV document containing of Home Depot product information."
+      }
+    ]
+  }

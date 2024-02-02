@@ -152,6 +152,16 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Other stuff I dont want to save
+data/amazon_product_listings/
+data/amazon_product_reviews/
+custom_scraper.ipynb
+custom_scraper.py
+data_regexs.txt
+test.ipynb
+product_agent.ipynb
+tempCodeRunnerFile.python
+
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
