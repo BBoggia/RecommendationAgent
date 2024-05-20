@@ -5,3 +5,4 @@ from .human_input_tool import HumanInputTool
 from .request_tool import RequestTool
 from .wikipedia_tool import WikipediaTool
 from .csv_search import CSVTool
+from .text_to_speech_tool import TextToSpeechTool  # Added this line

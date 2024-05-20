@@ -1,9 +1,9 @@
 import pprint
 from uuid import UUID
 from typing import Any, Dict, List, Optional
-from langchain.schema import AgentAction
-from langchain.callbacks.base import BaseCallbackHandler
 from managers import RichContextMemory
+from langchain_core.agents import AgentAction
+from langchain_core.callbacks import BaseCallbackHandler
 
 class MemoryCallbackHandler(BaseCallbackHandler):
     def __init__(self, memory: RichContextMemory):
@@ -20,7 +20,7 @@ class MemoryCallbackHandler(BaseCallbackHandler):
         print(f"    log: {log_parts[0]}")
         for part in log_parts[1:]:
             print(f"         {part}")
-        # self.memory.add_agent_action(action)
+        self.memory.add_agent_action(action)  # Uncommented this line to add agent action to memory
         super().on_agent_action(action, run_id=run_id, parent_run_id=parent_run_id, **kwargs)
 
     def on_tool_start(self, serialized: Dict[str, Any], input_str: str, *, run_id: UUID, parent_run_id: Optional[UUID] = None, tags: Optional[List[str]] = None, metadata: Optional[Dict[str, Any]] = None, **kwargs: Any,) -> Any:
@@ -29,6 +29,7 @@ class MemoryCallbackHandler(BaseCallbackHandler):
     
     def on_tool_end(self, output: str, *, run_id: UUID, parent_run_id: Optional[UUID] = None, **kwargs: Any, ) -> Any:
         print("\nTool end: ", output, "\nKWARGS: ", kwargs, "\n")
+        self.memory.update_finished_agent_action(output)  # Added this line to update finished agent action in memory
         return super().on_tool_end(output, run_id=run_id, parent_run_id=parent_run_id, **kwargs)
     
     def on_chain_start(self, serialized: Dict[str, Any], inputs: Dict[str, Any], *, run_id: UUID, parent_run_id: UUID = None, tags: List[str] = None, metadata: Dict[str, Any] = None, **kwargs: Any) -> Any:
