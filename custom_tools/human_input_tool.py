@@ -1,6 +1,6 @@
 from typing import Any, Dict
-from langchain.tools.base import BaseTool
-from langchain.tools.human import HumanInputRun
+from langchain_community.tools import HumanInputRun
+from langchain_core.tools import BaseTool
 
 class HumanInputTool(BaseTool):
     name: str

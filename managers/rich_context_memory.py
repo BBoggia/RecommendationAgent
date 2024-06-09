@@ -1,8 +1,8 @@
 from typing import Any, List, Tuple
 from langchain.memory import ConversationBufferMemory
-from langchain.schema import AgentAction
 from pydantic import Field
 from data_objects import ContextualData
+from langchain_core.agents import AgentAction
 
 
 class RichContextMemory(ConversationBufferMemory):

@@ -1,6 +1,5 @@
-from langchain.tools.base import BaseTool
-from langchain.chains import LLMMathChain
-from langchain.tools.base import BaseTool
+from langchain.chains.llm_math.base import LLMMathChain
+from langchain_core.tools import BaseTool
     
     
 class CalculatorTool(BaseTool):

@@ -12,7 +12,7 @@
       "debug": false
     },
     "llm_settings": {
-      "model": "gpt-4-turbo-preview",
+      "model": "gpt-4o",
       "temperature": 0.5,
       "verbose": true
     },
@@ -30,8 +30,8 @@
       "verbose": true
     },
     "prompt_settings": {
-      "user_name": "Branson",
-      "location": "Kent, Ohio",
+      "user_name": "",
+      "location": "",
       "date_format": "%A, %B %d, %Y %I:%M%p"
     },
     "memory_settings": {

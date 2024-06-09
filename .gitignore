@@ -155,12 +155,15 @@ cython_debug/
 # Other stuff I dont want to save
 data/amazon_product_listings/
 data/amazon_product_reviews/
+data/my_amazon_data_*/
 custom_scraper.ipynb
-custom_scraper.py
+*custom_scraper.py
 data_regexs.txt
 test.ipynb
 product_agent.ipynb
 tempCodeRunnerFile.python
+.plandex/*
+dr_jin_agent_conda_setup.bat
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

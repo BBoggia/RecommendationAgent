@@ -3,10 +3,10 @@ import glob
 import logging
 from typing import Iterable
 from langchain_community.document_loaders import Docx2txtLoader, TextLoader, PyPDFLoader, JSONLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
-from langchain.vectorstores.faiss import FAISS
 from data_objects import DocumentInfo
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
         
 
 class DocumentManager:

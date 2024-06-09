@@ -25,5 +25,5 @@ class AgentToolkit:
             # human_input_tool,
             HumanInputTool(),
             CSVTool(llm=self.llm, path_list="/Users/bransonboggia/Desktop/programming_related/kent-research/deep_learning/amazon_data/home_depot_data.csv", human_input_tool = HumanInputTool(), config=self.config),
-            TextToSpeechTool()  # Added this line
+            # TextToSpeechTool()  # Added this line
         ] # + [DocumentRetrievalTool(self.llm, self.vector_store, config = self.config)] if self.vector_store else []

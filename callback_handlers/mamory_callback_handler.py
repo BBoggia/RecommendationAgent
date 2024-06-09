@@ -11,15 +11,15 @@ class MemoryCallbackHandler(BaseCallbackHandler):
         self.memory = memory
 
     def on_agent_action(self, action: AgentAction, *, run_id: UUID, parent_run_id: Optional[UUID] = None, **kwargs: Any) -> None:
-        print("\n\nAgent action: ")
+        # print("\n\nAgent action: ")
 
-        print(f"    tool: {action.tool}")
-        print(f"    tool_input: {action.tool_input}")
+        # print(f"    tool: {action.tool}")
+        # print(f"    tool_input: {action.tool_input}")
 
-        log_parts = action.log.split('\n')
-        print(f"    log: {log_parts[0]}")
-        for part in log_parts[1:]:
-            print(f"         {part}")
+        # log_parts = action.log.split('\n')
+        # print(f"    log: {log_parts[0]}")
+        # for part in log_parts[1:]:
+        #     print(f"         {part}")
         self.memory.add_agent_action(action)  # Uncommented this line to add agent action to memory
         super().on_agent_action(action, run_id=run_id, parent_run_id=parent_run_id, **kwargs)
 

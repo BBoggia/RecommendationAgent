@@ -1,8 +1,8 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-from langchain.tools.base import BaseTool
-from langchain.utilities import TextRequestsWrapper 
+from langchain_community.utilities import TextRequestsWrapper
+from langchain_core.tools import BaseTool
 
 class RequestTool(BaseTool):
     name: str

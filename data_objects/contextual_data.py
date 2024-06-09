@@ -1,6 +1,6 @@
 from typing import Any, Dict, List
-from langchain.schema import AgentAction
 from pydantic import BaseModel
+from langchain_core.agents import AgentAction
 
 class ContextualData(BaseModel):
     # List of the previously used tools
@@ -41,8 +41,11 @@ class ContextualData(BaseModel):
     def serialize_for_gpt4(self):
         # Serialize relevant context into string for llm
         context_str = ''
-        for interaction in self.interaction_history:
-            context_str += f"Previous Question: {interaction['user_input']}\nPrevious Answer: {interaction['agent_output']}\n"
+        for i in range(len(self.interaction_history)):
+            context_str += f"Previous Question {i + 1}: {self.interaction_history[i]['user_input']}\nPrevious Answer: {self.interaction_history[i]['agent_output']}\n"
         # for tool_usage in self.tool_history:
         #     context_str += f"Used tool: {tool_usage['tool']} with input {tool_usage['input']}, got outcome {tool_usage['outcome']}\n"
         return context_str
+    
+    
+        
