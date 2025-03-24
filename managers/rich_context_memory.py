@@ -12,7 +12,7 @@ class RichContextMemory(ConversationBufferMemory):
         super().__init__(memory_key=memory_key, return_messages=return_messages, json_safe=json_safe, max_history=max_history)
 
     def remember(self, **kwargs):
-        # You can directly manipulate the memory object here
+        # Can directly manipulate the memory object here (dont forget)
         if "user_input" in kwargs and "agent_output" in kwargs:
             self.contextual_data.add_interaction(kwargs["user_input"], kwargs["agent_output"])
 
@@ -26,7 +26,7 @@ class RichContextMemory(ConversationBufferMemory):
         return self.contextual_data
     
     def get_history_serialized(self):
-        # Utilize the serialize_for_gpt4 method from your contextual_data to get the serialized string
+        # Utilize serialize_for_gpt4 method from contextual_data to get the serialized string
         return self.contextual_data.serialize_for_gpt4()
     
     def finish_last_tool(self, outcome: str):
@@ -40,9 +40,9 @@ class RichContextMemory(ConversationBufferMemory):
         """
         for action, outcome in steps:
             if isinstance(action, AgentAction):
-                # If the action is an AgentAction, update the tool interaction history
+                # If action is AgentAction update tool interaction history
                 self.contextual_data.add_agent_action(action, outcome)
             else:
-                # If the action is the final interaction, add to the interaction history
+                # If action is final interaction add to interaction history
                 self.contextual_data.add_interaction(action, outcome)
                 
