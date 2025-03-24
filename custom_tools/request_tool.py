@@ -11,7 +11,7 @@ class RequestTool(BaseTool):
 
     def __init__(self):
         super(RequestTool, self).__init__(name="Requests", description="Useful for when you need to access a website that does not have an API. Takes a url as input. (Example: 'https://www.google.com')", requests = TextRequestsWrapper(headers=None, aiosession=None))
-                                                     # Useful for when you to make a request to a specified URL given to you. Takes a URL as input. (Example: 'https://www.google.com')
+                                                     # Prompt Description: Useful for when you to make a request to a specified URL given to you. Takes a URL as input. (Example: 'https://www.google.com')
 
     def _run(self, input: str, *args, **kwargs) -> str:
         try:
