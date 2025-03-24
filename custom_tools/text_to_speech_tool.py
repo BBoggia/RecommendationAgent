@@ -23,7 +23,7 @@ class TextToSpeechTool(BaseTool):
             pass
 
         # Split text into chunks
-        chunk_size = 1000  # Adjust chunk size as needed
+        chunk_size = 1000 
         text_chunks = [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
 
         audio_files = []
