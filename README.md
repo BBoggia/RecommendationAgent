@@ -1,2 +1,2 @@
 # RecommendationAgent
-A Recommendation Agent built using langchain and running on GPT-4
+A proof of concept recommendation agent for Home Depot products built using langchain and running on GPT-4.
