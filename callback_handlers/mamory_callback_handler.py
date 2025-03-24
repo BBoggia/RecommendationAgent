@@ -20,7 +20,7 @@ class MemoryCallbackHandler(BaseCallbackHandler):
         # print(f"    log: {log_parts[0]}")
         # for part in log_parts[1:]:
         #     print(f"         {part}")
-        self.memory.add_agent_action(action)  # Uncommented this line to add agent action to memory
+        self.memory.add_agent_action(action)  # add agent action to memory
         super().on_agent_action(action, run_id=run_id, parent_run_id=parent_run_id, **kwargs)
 
     def on_tool_start(self, serialized: Dict[str, Any], input_str: str, *, run_id: UUID, parent_run_id: Optional[UUID] = None, tags: Optional[List[str]] = None, metadata: Optional[Dict[str, Any]] = None, **kwargs: Any,) -> Any:
