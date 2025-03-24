@@ -19,7 +19,7 @@ class TextToSpeechTool(BaseTool):
 
         # Placeholder for text-to-speech model
         def text_to_speech(text_chunk: str, output_path: str):
-            # This is where the text-to-speech model would process the text_chunk and save it to output_path
+            # This is where the text-to-speech model will process the text_chunk and save it to output_path
             pass
 
         # Split text into chunks
